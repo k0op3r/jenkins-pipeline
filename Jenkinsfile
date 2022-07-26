@@ -4,8 +4,9 @@ pipeline { agent any
      PROJECT_NAME = "XOPOWO"
      OWNER_NAME   = "Max Dudko"
     }
-    stages { stage('1-Build') 
-           { steps { echo "Start of Stage Build" 
+       stages { stage('1-Build') 
+           { steps { 
+             echo "Start of Stage Build" 
              echo "This project name is ${PROJECT_NAME}" 
              echo "Owner by ${OWNER_NAME}" 
              echo "Building......." 
@@ -21,7 +22,8 @@ pipeline { agent any
         }
         stage('3-Deploy') 
            { steps { 
-             echo "Start of Stage Deploy" sh "ls -la /var/log" 
+             echo "Start of Stage Deploy" 
+             sh "ls -la /var/log" 
              echo "Deploying......." 
              echo "End of Stage Build"
             }
